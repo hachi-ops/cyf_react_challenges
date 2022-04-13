@@ -1,21 +1,23 @@
-import React from 'react';
-// import HighScoreTable from './HighScoreTable.js';
-import './App.css';
-import PlayerScore from './PlayerScore.js';
+import React from "react";
+import HighScoreTable from "./HighScoreTable";
+import scores from "./scores";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-          {/* <HighScoreTable /> */}
-          <PlayerScore player = "Lorenzo" score = "999"/>
-    {/* <ul>
-      {AllCountryScores.map((el) => (
-        <li>{el.name}</li>
-      ))}
-    </ul> */}
-      </div>
+    <div className="container">    
+      <h1>High Scores per Country</h1>     
+      {scores.map((country, index) => {
+          return (
+            <HighScoreTable
+              key={index}
+              countryName={country.name}
+              countryScores={country.scores}           
+            />
+          );
+        })}
+    </div>
   );
 }
-
 
 export default App;

@@ -1,12 +1,14 @@
-// PlayerScore` - component responsible for displaying a single score by one player 
-// (e.g. as one line of the table) (e.g. `Neill 2000`)
+import React from "react";
+import "./PlayerScore.css";
 
-function PlayerScore(props){
-    return (
-    <div>
-        {props.player} - {props.score}
-    </div>
-    )
-}
+const PlayerScore = (props) => {
+  return (
+      <tr className="tableRow">
+        <td>{props.name}</td>
+        <td>{props.score}</td>
+      </tr>
+      
+  );
+};
 
 export default PlayerScore;

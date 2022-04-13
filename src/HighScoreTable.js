@@ -1,27 +1,23 @@
-  // - `HighScoreTable` - a table with a country name and a list of player-scores for that country.
-import AllCountryScores from './AllCountryScores.js';
+import React from "react";
+import PlayerScore from "./PlayerScore";
+import "./HighScoreTable.css";
 
-function HighScoreTable() {
-  const DisplayData = AllCountryScores.map(info => {
-    return (
-      <tr>
-        <td>{info.name}</td>       
-      </tr>
-    );
-  });
-
+const HighScoreTable = (props) => {
   return (
-    <div>
-      <table>
+    <table className="table">
         <thead>
-          <tr>
-            <th>Country</th>               
-          </tr>
+            <tr>
+                <th>High Scores: {props.countryName}</th>
+            </tr>
         </thead>
-        <tbody>{DisplayData}</tbody>
-      </table>
-    </div>
+        <tbody>           
+            {props.countryScores.map((player, index) => {
+            return <PlayerScore key={index} name={player.n} score={player.s} />;
+          })}
+           
+        </tbody>
+    </table>
   );
-}
+};
 
 export default HighScoreTable;
