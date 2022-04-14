@@ -22,19 +22,26 @@ const fakeData = [
 function Card() {
     return (
         <div>
-            <div>Image</div>       
-                <h1>Heading</h1>
-                <button>New!</button>
-                <button>Featured</button>      
-                <h2>Title</h2>
-                <ul>
-                    <li>d ago</li>
-                    <li>work pattern</li>
-                    <li>Location</li>
-                </ul>
-                <hr />
-                <div className="=tag">Tag</div>
-        </div>
+            {fakeData.map((el) => {
+               return (
+                   <div>
+                       <div>{el.logo}src={fakeData.logo} alt={""}</div>
+                       <div>{el.company}</div>
+                       <div>{el.new}</div>
+                       <div>{el.featured}</div>
+                       <div>{el.position}</div>
+                       <div>{el.role}</div>
+                       <div>{el.level}</div>
+                       <div>{el.postedAt}</div>
+                       <div>{el.contract}</div>
+                       <div>{el.location}</div>
+                       <div>{el.languages}</div>
+                       <div>{el.tools}</div>
+                   </div>
+               );
+            })}
+        </div>     
+       
     )
 }
 
