@@ -1,3 +1,18 @@
+body {             
+        font-family: 'Faster One',
+        cursive;  
+     
+/*         
+        font-family: 'Tourney',
+        cursive; */
+/*       
+        font-family: 'VT323',
+        monospace;  */
+}
+
+
+
+
 .container {
     display: flex;
     flex-direction: column;
