@@ -5,7 +5,7 @@ import JobListing from './components/JobListing';
 function App() {
   return (
     <div className="App">
-      <JobListing data={jobsData} />
+      <JobListing data={jobsData}  />
     </div>
   );
 };

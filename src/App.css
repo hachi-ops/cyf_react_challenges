@@ -1,38 +1,66 @@
+/* - Desaturated Dark Cyan: hsl(180, 29%, 50%)
+- Light Grayish Cyan (Background): hsl(180, 52%, 96%) 
+
+- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%) 
+
+- Dark Grayish Cyan: hsl(180, 8%, 52%) 
+- Very Dark Grayish Cyan: hsl(180, 14%, 20%) */
+
+:root {
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+  --light-grayish-cyan-1: hsl(180, 29%, 50%);
+  --light-grayish-cyan-2: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+}
+
+* {
+  border: 1px solid green;
+}
+
+
 .App {
   text-align: center;
+  background-color: var(--light-grayish-cyan-2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  background-color: var()
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  font-family: 'League Spartan',  sans-serif;
+  font-size: 10px;
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid red;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff; 
 }
 
-.App-link {
-  color: #61dafb;
+/* .logo {
+   
+} */
+
+.info {
+  display: flex;
+  justify-self:flex-start;
+  flex-direction: column;
+ 
+}
+.job-details ul {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.job-details ul li {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.languages-and-tools {
+  display: flex;  
+}
+
+.languages-and-tools div {  
+  margin: 10px;
 }

@@ -1,21 +1,35 @@
 import React from "react";
+import Logo from '../Logo';
+// import logo from './images/logo.png';
+
 
 function JobListing (props) {
     return (
         <div>
           {props.data.map((item) => {
             return (
-              <div>
-                <div>
-                  <img src={item.logo} alt={"logo"} style={{width: "80px"}} />
-                </div>                
-                <h1>{item.company}</h1>
-                <h2>{item.position}</h2>
-                <div>{item.postedAt}</div>  
-                <div>{item.contract}</div>          
-                <div>{item.languages}</div>
-                <div>{item.location}</div>
-                <div>{item.tools}</div>                                         
+              <div className="card">
+                  {/* <img src={item.logo} alt={logo} /> */}
+                  <Logo />
+                <div className="info">             
+                    <h1>{item.company}</h1>
+                    {/* <div>{item.new}</div>
+                    <div>{item.featured}</div> */}
+                    <h2>{item.position}</h2>
+                    <div className="job-details">
+                        <ul>
+                            <li>{item.postedAt}</li>
+                            <li>{item.contract}</li>
+                            <li>{item.location}</li>
+                        </ul>           
+                    </div>
+                </div>
+                <div className="languages-and-tools">  
+                    <div>{item.role}</div>
+                    <div>{item.level}</div>       
+                    <div>{item.languages}</div>                
+                    <div>{item.tools}</div>  
+                </div>                                       
               </div>
             )
           })}          
