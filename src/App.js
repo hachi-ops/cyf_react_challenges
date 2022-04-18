@@ -5,26 +5,10 @@ import JobListing from './components/JobListing';
 function App() {
   return (
     <div className="App">
-      <JobListing data={jobsData}/>
+      <JobListing data={jobsData} />
     </div>
   );
 };
-
-// function JobBriefDetails () {
-//   return (
-//     <div>
-//       {jobsData.map((jobBriefDetails) => {
-//         return (
-//           <ul>
-//             <li>{jobBriefDetails.postedAt}</li>
-//             <li>{jobBriefDetails.contract}</li>
-//             <li>{jobBriefDetails.location}</li>
-//           </ul>
-//         )
-//       })}
-//     </div>
-//   )
-// }
 
 // function JobTags () {
 //   return (
