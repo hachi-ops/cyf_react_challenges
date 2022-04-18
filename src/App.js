@@ -1,34 +1,14 @@
 import './App.css';
 import jobsData from './data';
+import JobListing from './components/JobListing';
 
 function App() {
   return (
     <div className="App">
-      <JobListing />
+      <JobListing data={jobsData}/>
     </div>
   );
 };
-
-function JobListing () {
-    return (
-        <div>
-          {jobsData.map((data) => {
-            return (
-              <div>
-                <div>
-                  <img src={data.logo} alt={"logo"} style={{width: "80px"}} />
-                </div>                
-                <h1>{data.company}</h1>
-                <h2>{data.position}</h2>            
-                <div>JobBriefDetails</div>
-                <div>JobTags</div>                                         
-              </div>
-            )
-          })}
-          
-        </div>
-    )
-}
 
 // function JobBriefDetails () {
 //   return (
