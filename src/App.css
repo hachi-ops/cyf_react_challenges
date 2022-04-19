@@ -23,16 +23,13 @@
   background-color: var(--light-grayish-cyan-2);
 }
 
-.App {
-  background-color: var()
-}
 .card {
   font-family: 'League Spartan',  sans-serif;
   font-size: 10px;
   width: 80%;
   margin: 10px auto;
-  border: 1px solid red;
-  display: flex;    
+  display: flex;   
+  /* justify-content: flex-start; */
   align-items: center;
   background-color: #fff; 
 }
@@ -41,12 +38,21 @@
    width: 15%;
 }
 
+.job-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+}
+
 .info {
   display: flex; 
   align-items: flex-start;
-  flex-direction: column;
- 
+  flex-direction: column; 
+  justify-content: space-between;
+  
 }
+
 .job-details ul {
   display: flex;
   padding: 0;
@@ -60,19 +66,14 @@
   list-style-type: none;
 }
 
-.job-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 
 .languages-and-tools {
   display: flex; 
-  align-items: center; 
-  
+  flex-direction: row;
+  align-items: center;   
 }
 
-.languages-and-tools div {  
-  margin-right: 10px;
-  
+.languages-and-tools div { 
+  margin-right: 10px;  
 }
