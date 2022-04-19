@@ -32,35 +32,47 @@
   width: 80%;
   margin: 10px auto;
   border: 1px solid red;
-  display: flex;
-  justify-content: space-between;
+  display: flex;    
   align-items: center;
   background-color: #fff; 
 }
 
-/* .logo {
-   
-} */
+.logo {
+   width: 15%;
+}
 
 .info {
-  display: flex;
-  justify-self:flex-start;
+  display: flex; 
+  align-items: flex-start;
   flex-direction: column;
  
 }
 .job-details ul {
   display: flex;
+  padding: 0;
 }
 
-.job-details ul li {
-  margin-right: 10px;
-  margin-left: 0;
+.job-details ul li {  
+  margin-right: 20px;
+}
+
+.job-details ul li:first-child {
+  list-style-type: none;
+}
+
+.job-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .languages-and-tools {
-  display: flex;  
+  display: flex; 
+  align-items: center; 
+  
 }
 
 .languages-and-tools div {  
-  margin: 10px;
+  margin-right: 10px;
+  
 }
