@@ -1,22 +1,14 @@
-/* - Desaturated Dark Cyan: hsl(180, 29%, 50%)
-- Light Grayish Cyan (Background): hsl(180, 52%, 96%) 
-
-- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%) 
-
-- Dark Grayish Cyan: hsl(180, 8%, 52%) 
-- Very Dark Grayish Cyan: hsl(180, 14%, 20%) */
-
 :root {
   --desaturated-dark-cyan: hsl(180, 29%, 50%);
-  --light-grayish-cyan-1: hsl(180, 29%, 50%);
+  --light-grayish-cyan-1: hsl(180, 52%, 96%);
   --light-grayish-cyan-2: hsl(180, 31%, 95%);
   --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
-* {
+/* * {
   border: 1px solid green;
-}
-
+} */
 
 .App {
   text-align: center;
@@ -29,7 +21,6 @@
   width: 80%;
   margin: 10px auto;
   display: flex;   
-  /* justify-content: flex-start; */
   align-items: center;
   background-color: #fff; 
 }
@@ -49,8 +40,7 @@
   display: flex; 
   align-items: flex-start;
   flex-direction: column; 
-  justify-content: space-between;
-  
+  justify-content: center;  
 }
 
 .job-details ul {
@@ -66,14 +56,26 @@
   list-style-type: none;
 }
 
-
-
-.languages-and-tools {
-  display: flex; 
-  flex-direction: row;
-  align-items: center;   
+h1 {
+  color: var(--desaturated-dark-cyan);
+  font-size: 0.6rem;
 }
 
-.languages-and-tools div { 
+h2 {
+  color: var(--very-dark-grayish-cyan);
+  font-size: 0.8rem;
+}
+.languages-and-tools {
+  display: flex;
+  justify-items: flex-end;
+  align-items: center;    
+}
+
+.languages-and-tools li { 
+  list-style-type: none;
   margin-right: 10px;  
+  background-color: var(--light-grayish-cyan-2);
+  color: var(--very-dark-grayish-cyan);
+  padding: 3px;
+  border: 3px;
 }

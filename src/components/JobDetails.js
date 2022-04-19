@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 function JobDetails (props) {
     return (
             <div className="job-details">            
@@ -10,8 +8,7 @@ function JobDetails (props) {
                 <li>{props.item.contract}</li>
                 <li>{props.item.location}</li>
               </ul>               
-                  </div>       
-       
+                  </div>         
     )
 }
 

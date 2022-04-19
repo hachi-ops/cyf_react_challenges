@@ -1,5 +1,5 @@
 import React from "react";
-import jobsData from "../data";
+import jobsData from "../data.json";
 import Logo from "./Logo";
 import Info from "./Info";
 import LanguagesAndTools from "./LanguagesAndTools";
@@ -14,9 +14,8 @@ function Card () {
             <Logo />         
                 <div className="job-container">
                 <Info item={item} className="info"/>                  
-                <LanguagesAndTools item={item} className="languages-and-tools"/>
-              </div>        
-            
+                <LanguagesAndTools item={item} />
+              </div>                
         </div>
         )
       })}

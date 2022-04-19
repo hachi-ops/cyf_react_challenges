@@ -4,8 +4,8 @@ import JobDetails from './JobDetails';
 function Info (props) {
     return (
         <div className='info'>            
-              <div>{props.item.company}</div>
-              <div>{props.item.position}</div>
+              <h1>{props.item.company}</h1>
+              <h2>{props.item.position}</h2>
               <JobDetails item={props.item}/>  
         </div>
     )
