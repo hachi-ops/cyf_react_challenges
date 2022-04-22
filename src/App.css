@@ -63,12 +63,13 @@ h1 {
 
 h2 {
   color: var(--very-dark-grayish-cyan);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .languages-and-tools {
   display: flex;
   justify-items: flex-end;
-  align-items: center;    
+  align-items: center; 
+  font-size: 1.1rem;   
 }
 
 .languages-and-tools li { 
@@ -76,6 +77,6 @@ h2 {
   margin-right: 10px;  
   background-color: var(--light-grayish-cyan-2);
   color: var(--very-dark-grayish-cyan);
-  padding: 3px;
+  padding: 4px;
   border: 3px;
 }
