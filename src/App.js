@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="container">    
       <h1>High Scores per Country</h1>     
-      {scores.map((country, index) => {
+      {scores
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((country, index) => {
           return (
             <HighScoreTable
               key={index}
