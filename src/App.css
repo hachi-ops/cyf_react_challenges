@@ -9,47 +9,21 @@
 body {             
         font-family: 'Tourney', cursive;
         font-size: 1.7rem;
-        background-color: hsl(240, 11%, 80%);
+        background-color: hsl(0, 0%, 51%);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 89%;
-
     margin: 10px auto;
-    /* box-sizing: border-box; */
     border: 5px inset var(--sandy-brown);    
     background-color: var(--xicetic);
 }
 
 .table {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 90%;
         border: 8px ridge var(--green-yellow-crayola);
-        margin: 10px;
-        background-color: var(--buff);
-        
-}
-
-/* Topography */
-
-h1 {
-        text-align: center;       
-        font-size: 1.5rem;
-        color: var(--buff);
-        font-weight: 900;
-}
-
-.country-name tr th{
-        color: var(--xicetic);
-        font-size: 1.2rem;
-        font-weight: 700;
+        margin: 10px auto;
+        background-color: var(--buff);        
 }
 
 .table-row {
@@ -60,32 +34,28 @@ h1 {
         border: 5px groove var(--sandy-brown);
         margin: auto;
         width: 100%;
-        padding: 5px;  
+        padding: 5px;
         width: 140px;
-       
 }
 
-/* .table-row .tr {
-        width: 95%;
-        margin: 0 auto;
-       
-} */
-
-tbody {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-}
 .table-row td {
-        font-size: .9rem;        
+        font-size: .9rem;
         color: var(--green-yellow-crayola);
-        font-weight:900;        
+        font-weight: 900;
 }
 
-.score{
+.score {
         color: var(--red-orange-color-wheel);
 }
 
+/* Topography */
+
+h1 {
+        text-align: center;       
+        font-size: 1.5rem;
+        color: var(--buff);
+        font-weight: 900;
+}
 
 @media screen and (min-width: 600px) {
         h1 {
