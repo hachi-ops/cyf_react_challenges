@@ -1,25 +1,100 @@
+:root {
+        --green-yellow-crayola: hsl(61, 74%, 82%);
+        --buff: hsl(45, 75%, 72%);
+        --sandy-brown: hsl(27, 97%, 65%);
+        --red-orange-color-wheel: hsl(14, 100%, 55%);
+        --xicetic: hsl(242, 94%, 7%);
+}
 body {             
         font-family: 'Faster One',
         cursive;  
      
-/*         
+        
         font-family: 'Tourney',
-        cursive; */
+        cursive;
 /*       
         font-family: 'VT323',
         monospace;  */
+
+        font-size: 1.7rem;
+        /* background-color: rgb(7, 3, 0); */
+        color: beige;
+        font-weight:200;
 }
-
-
-
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 4px solid blue;
-    width: 50%;
-    margin: auto;
+    width: 80%;
+    margin: 20px auto;
+    /* box-sizing: border-box; */
+    border: 5px inset var(--sandy-brown);    
+    background-color: var(--xicetic);
 }
 
+/* Topography */
+
+h1 {
+        text-align: center;
+        font-weight: 600;
+       
+        font-size: 2rem;
+        color: var(--buff);
+        font-weight: 900;
+}
+
+.country-name tr th{
+        color: var(--xicetic);
+        font-size: 1.6rem;
+        font-weight: 700;
+}
+
+@media screen and (min-width: 600px) {
+        h1{
+                font-size: 3rem;
+        }
+
+        .country-name tr th{
+                font-size: 2.2rem;
+
+        }
+        
+}
+
+
+
+.table-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--xicetic);
+        border: 5px groove var(--sandy-brown);
+        margin: 10px auto;
+        width: 100%;
+        padding: 15px;
+     
+}
+
+.table-row td {
+        font-size: 1rem;        
+        color: var(--sandy-brown);
+        font-weight:900;
+        
+}
+
+.score{
+        color: var(--red-orange-color-wheel);
+}
+.table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        border: 8px ridge var(--green-yellow-crayola);
+        margin: 10px;
+        background-color: var(--buff);
+        
+}

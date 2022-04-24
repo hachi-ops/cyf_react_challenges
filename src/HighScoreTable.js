@@ -1,11 +1,11 @@
 import React from "react";
 import PlayerScore from "./PlayerScore";
-import "./HighScoreTable.css";
+
 
 const HighScoreTable = (props) => {
   return (
     <table className="table">
-        <thead>
+        <thead className="country-name">
             <tr>
                 <th>High Scores: {props.countryName}</th>
             </tr>

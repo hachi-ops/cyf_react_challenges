@@ -1,11 +1,11 @@
 import React from "react";
-import "./PlayerScore.css";
+
 
 const PlayerScore = (props) => {
   return (
-      <tr className="tableRow">
-        <td>{props.name}</td>
-        <td>{props.score}</td>
+      <tr className="table-row">
+        <td className="name">{props.name}</td>
+        <td><span className="score">{props.score}</span></td>
       </tr>
       
   );
