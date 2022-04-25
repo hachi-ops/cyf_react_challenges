@@ -1,13 +1,12 @@
-import React from "react";
 
+import React from "react";
 
 const PlayerScore = (props) => {
   return (
-      <tr className="tableRow">
-        <td>{props.name}</td>
-        <td>{props.score}</td>
-      </tr>
-      
+      <tr className="table-row">
+        <td className="name">{props.name}</td>
+        <td><span className="score">{props.score}</span></td>
+      </tr>      
   );
 };
 
