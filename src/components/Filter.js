@@ -1,15 +1,15 @@
-import React from "react";
+// import React from "react";
 
-function Filter (props) {
+// function Filter (props) {
    
-    return (
-        <div>
-            <input 
-            placeholder="Filter jobs..."
-            onClick={props.handleClick}
-            />
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             <input 
+//             placeholder="Filter jobs..."
+//             onClick={props.handleClick}
+//             />
+//         </div>
+//     )
+// }
 
-export default Filter;
+// export default Filter;
