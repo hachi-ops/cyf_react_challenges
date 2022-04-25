@@ -63,9 +63,9 @@ const getData = () => {
                   <div className="card" >
               <img className='flag' src={country.flags.svg} alt={""} style={{width:"300px"}}/>
                 <p><span>Country: </span>{country.name.common}</p>
-                <p><span>Population: </span> {country.population}</p>
-                <p><span>Region: </span> {country.region}</p> 
-                <p><span>Capital: </span> {country.capital}</p>               
+                <p><span>Population: </span>{country.population}</p>
+                <p><span>Region: </span>{country.region}</p> 
+                <p><span>Capital: </span>{country.capital}</p>               
             </div>              
             )
         })}
