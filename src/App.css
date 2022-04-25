@@ -48,12 +48,22 @@ body {
         color: var(--red-orange-color-wheel);
 }
 
-/* Topography */
-
 h1 {
         text-align: center;       
         font-size: 1.5rem;
         color: var(--buff);
+        font-weight: 900;
+}
+
+button {
+        display: block;
+        margin: 0 auto;
+        background: var(--sandy-brown);
+        color: var(--xicetic);
+        padding: 5px;
+        border: 1px solid var(--red-orange-color-wheel);
+        border-radius: 8px;
+        font-family: 'Tourney', cursive;
         font-weight: 900;
 }
 
