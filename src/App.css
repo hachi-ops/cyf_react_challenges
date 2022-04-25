@@ -1,38 +1,91 @@
-.App {
+/* - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%) 
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%) 
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%) 
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%) 
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%) 
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+## Typography ### 
+Body Copy - Homepage Items: 14px 
+- Detail Page: 16px 
+
+### Fonts 
+- Family: [Nunito Sans](https: //fonts.google.com/specimen/Nunito+Sans)
+- Weights: 300, 600, 800 
+## Icons 
+For the icons, you can use a font icon library. Don't worry if the icons that you choose don't look exactly like they do on the design. Some suggestions can be found below: - [Font Awesome](https: //fontawesome.com)
+- [IcoMoon](https: //icomoon.io)
+- [Ionicons](https: //ionicons.com) */
+
+
+/* <a href="https://www.flaticon.com/free-icons/moon"title="moon icons">Moon icons created by Good Ware - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/moon"title="moon icons">Moon icons created by Good Ware - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/search"title="search icons">Search icons created by Taufik - Flaticon</a> */
+
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-dark-blue: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  background-color: var(--very-light-gray);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header h1 {
+  font-size: 1rem;
+  font-weight: 800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.search-area, .cards {
+  background-color: var(--very-light-gray);
+}
+/* input {
+  display: block;
+} */
+
+.card {
+  border: 2px solid blue;
+  margin: 20px auto;
+  background-color: var(--white);
+  text-align: left;
+  max-width: fit-content;
+}
+
+.card span {
+  font-weight: 600;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+ .cards {
+   display: flex;
+   flex-wrap: wrap;
+ }
 }
