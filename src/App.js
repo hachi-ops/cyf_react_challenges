@@ -8,13 +8,13 @@ import moon from './moon.png';
 // import SearchResults from './SearchResults';
 // import countriesAll from './countriesAll.json';
 
-function countryPage () {
-  return (
-    <div>
-      return <p>countryPage</p>
-    </div>
-  )
-}
+// function countryPage () {
+//   return (
+//     <div>
+//       return <p>countryPage</p>
+//     </div>
+//   )
+// }
 
 function App() {
 
