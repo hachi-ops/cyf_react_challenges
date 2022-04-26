@@ -18,6 +18,14 @@ import moon from './moon.png';
 
 function App() {
 
+  function ClickLogger() {
+    function logWhenClicked() {
+      console.log("Button was clicked");
+    }
+    console.log("component appeared");
+    return <button onClick={logWhenClicked}>Click me!</button>
+  }
+
 const [items, setItems] = useState([]);
 
 useEffect(() => {
@@ -35,6 +43,8 @@ const getData = () => {
     }
   )}
 
+  const [searchTerm, setSearchTerm] = useState("");
+
     return(
         <div>
           <header className="App-header">
@@ -44,9 +54,13 @@ const getData = () => {
           </header>
         <div className='search-area'>
           <img src={searchIcon} alt={"search icon"} />
-           <input type="text" placeholder='Search for a country...'></input> 
+           <input 
+           type="text" 
+           placeholder='Search for a country...' 
+           onChange={((e) => setSearchTerm(e.target.value))}
+           /> 
               <div className='region'>
-                <label HTMLfor="region">Filter by Region</label>
+                <label htmlfor="region">Filter by Region</label>
                   <select id="region" name="region">
                     <option value="Africa" selected>Africa</option>
                     <option value="America">America</option>
@@ -55,10 +69,20 @@ const getData = () => {
                     <option value="Oceania">Oceania</option>
                   </select>
               </div>
+              <div><button onClick={ClickLogger}>click</button></div>
         </div>
               
        <div className='cards'> 
-                 {items.map((country) => {
+                 {items
+                //  .sort((a, b) => a.name.common.toLocaleCompare(b.name.common))
+                .filter((country) => { 
+                  if(country.name.common.toLowerCase().includes(searchTerm.toLowerCase())) {
+                      return true;
+                    }else{
+                      return false;
+                    }
+                })
+                 .map((country) => {
                 return (
                   <div className="card" >
               <img className='flag' src={country.flags.svg} alt={""} style={{width:"300px"}}/>
