@@ -21,6 +21,15 @@ function App () {
             <ul>
                 {babyNamesData
                 .sort((a, b) => a.name.localeCompare(b.name))
+                .filter((babyName) => {
+                  const {name} = babyName;
+                  if(name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return true;
+                  }else{
+                    return false; 
+                  }
+                                 
+                })
                 .map((babyName) => (
                   <li className={babyName.sex} key={babyName.id}> {babyName.name}</li>
                 ))}
