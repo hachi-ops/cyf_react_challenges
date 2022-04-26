@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import babyNamesData from './data/babyNamesData.json';
+import './css/style.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+function App () {
+
+  const [searchTerm, setSearchTerm] = useState("");
+   
+ return (
+    <div>
+      <header>
+        <form>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
+        </form>
       </header>
-    </div>
-  );
+            <ul>
+                {babyNamesData
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((babyName) => (
+                  <li className={babyName.sex} key={babyName.id}> {babyName.name}</li>
+                ))}
+            </ul>
+      </div>
+  )
 }
 
 export default App;
