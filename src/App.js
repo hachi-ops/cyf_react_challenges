@@ -14,13 +14,7 @@ import Header from './components/Header';
 
 function App() {
 
-  function ClickLogger() {
-    function logWhenClicked() {
-      console.log("Button was clicked");
-    }
-    console.log("component appeared");
-    return <button onClick={logWhenClicked}>Click me!</button>
-  }
+
 
 const [items, setItems] = useState([]);
 
@@ -33,7 +27,7 @@ const getData = () => {
     .then(res => res.json())
     .then(
     (results) => {
-      // setIsClicked(true);
+    
       setItems(results);
       console.log(results)
     }
@@ -63,7 +57,7 @@ const getData = () => {
                     <option value="Oceania">Oceania</option>
                   </select>
               </div>
-              {/* <div><button onClick={ClickLogger}>click</button></div> */}
+          
         </div>
               
        <div className='cards'> 
