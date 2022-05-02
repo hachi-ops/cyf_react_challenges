@@ -130,10 +130,8 @@ input {
   padding: 5px;
   border-radius: 5px;
   gap: 5px;  
-  width: 400px;
- 
+  width: 400px; 
 } 
-
 
 .select-region {
   width: 400px;
