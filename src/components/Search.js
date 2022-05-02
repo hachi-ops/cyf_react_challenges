@@ -1,32 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import searchIcon from '../magnifying-glass.png';
 
+
+
 function Search() {
+    const [searchTerm, setSearchTerm] = useState("");
+
+    
   return (
 
-             <div className='search-area'>
-          <div class-className='search-input'>
-            <div><img src={searchIcon} alt={"search icon"} /></div>
-           <input 
-           type="text" 
-           placeholder='Search for a country...' 
-           onChange={handleSearch}
-           /> 
-           </div>
-              <div className='select-region'>
-                <label htmlFor="select">Filter by Region</label>
-                  <select id="select" name="select" className='select'>
-                    <option value="Africa" >Africa</option>
-                    <option value="America">America</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="Oceania">Oceania</option>
-                  </select>
-              </div>
-              
-        </div>
+    
   
   )
 }
 
 export default Search
+
+
+
+
+// function Search (props) {
+//     const [query, setQuery] = useState("")
+//     return (
+//         <div>
+//             <input type="text" placeholder="filter names..." 
+//             value={query}
+//             onChange={event => setQuery(event.target.value)}/>
+//        {
+//   props.names
+//   .filter((name) => {
+//     if (query === '') {
+//       return false;
+//     } else if (name.name.toLowerCase().includes(query.toLowerCase())) {
+//       return true;
+//     }
+//   }).map((name) => (
+//     <ul>
+//       <li className={name.sex}>{name.name}</li>     
+//     </ul>
+//   ))}
+//         </div>
+//     )
+// }
+// export default Search;

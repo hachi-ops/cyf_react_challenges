@@ -2,48 +2,61 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 // import searchIcon from './magnifying-glass.png';
 import Header from './components/Header';
-import Countries from './components/Countries';
+import SearchInput from './SearchInput';
+import Country from './Country';
+// import Search from './components/Search';
+// import Countries from './components/Countries';   
+
+    function App() {
+        const [error, setError] = useState(null);
+        const [isLoaded, setIsLoaded] = useState(false);
+        const [countries, setCountries] = useState([]);
+        const url = "https://restcountries.com/v3.1/all";
+    const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
 
-// function handleSearch () {
-//  return (e) => setSearchTerm(e.target.value)
-// }
 
-function App() {
 
-  const [countries, setCountries] = useState([]);
-
-  const url = "https://restcountries.com/v3.1/all";
-
-  const getData = () => {
+const getData = () => {
   fetch(url)
     .then(res => res.json())
     .then(
     (results) => {
-      // setIsClicked(true);
+      setIsLoaded(true);
       setCountries(results);
-      console.log(results)
-    }
-  )}
+      console.log(results);
+      setSearchTerm(searchTerm);    
+    },
+      (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+  )};
 
-  useEffect(() => {
+
+
+        useEffect(() => {
   getData();
-}, [])
+}, []);
 
-// const [searchTerm, setSearchTerm] = useState("");
+        if (error) {
+            return <>{error.message}</>;
+        } else if (!isLoaded) {
+            return <>loading...</>;
+        } else {
+            return (
+                
+                <div className="app">
+                  <Header />
+               
 
-    return(
-        <div className='app'>
-        <Header/>
-        {/* <div className='search-area'>
-          <div class-className='search-input'>
-            <div><img src={searchIcon} alt={"search icon"} /></div>
-           <input 
-           type="text" 
-           placeholder='Search for a country...' 
-           onChange={((e) => setSearchTerm(e.target.value))}
-           /> 
-           </div>
+                       <div className='search-area'>
+                            <SearchInput handleSearchChange={handleSearchChange} />
+       
               <div className='select-region'>
                 <label htmlFor="select">Filter by Region</label>
                   <select id="select" name="select" className='select'>
@@ -54,14 +67,27 @@ function App() {
                     <option value="Oceania">Oceania</option>
                   </select>
               </div>
-              
-        </div> */}
-        <Countries countries={countries} />
-              
-       
-        </div>     
-    )
-}
+          
+        </div>
+                         
+                    <div className="cards">
+  
+                        {countries
+                           .filter((country) => { 
+                  if(country.name.common.toLowerCase().includes(searchTerm.toLowerCase())) {
+                      return true;
+                    }else{
+                      return false;
+                    }
+                })                  
+                        .map((country) => (
+                          <Country country={country}/>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+    }
 
 export default App;
 
