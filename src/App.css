@@ -22,6 +22,8 @@ For the icons, you can use a font icon library. Don't worry if the icons that yo
 /* <a href="https://www.flaticon.com/free-icons/moon"title="moon icons">Moon icons created by Good Ware - Flaticon</a> */
 /* <a href="https://www.flaticon.com/free-icons/search"title="search icons">Search icons created by Taufik - Flaticon</a> */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 :root {
   --dark-blue: hsl(209, 23%, 22%);
   --very-dark-blue: hsl(207, 26%, 17%);
@@ -39,17 +41,17 @@ For the icons, you can use a font icon library. Don't worry if the icons that yo
   
 }
 
-/* * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} */
+}
 
 body {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   text-align: center;
-  padding: 10px;
+  padding: 30px;
   background-color: var(--very-light-gray);
 }
 
@@ -63,6 +65,7 @@ body {
   display: flex;
   justify-content: space-between;
   background-color:#fff;
+  margin-bottom: 70px;
  
 
 }
@@ -120,6 +123,7 @@ input {
   border: none;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-family: inherit;
 }
 
 .search-input {
@@ -150,18 +154,20 @@ input {
   outline: none;
 }
 
+.cards {
+  gap: 36px 32px;
+}
+
 .card {
   /* border: 2px solid blue; */
-  margin: 10px auto;
+  margin: 0 auto;
   background-color: var(--white);
   text-align: left;
-  max-width: 260px;
-  max-height: 400px;
+  max-width: 280px;
+  max-height:fit-content;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-  rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  
-  
+  rgba(0, 0, 0, 0.22) 0px 15px 12px; 
 }
 
 .card span {
@@ -175,15 +181,21 @@ img {
   margin: 0 auto;
 }
 
+.card img {
+  /* height: 50%; */
+  width: 100%;
+}
+
 .info {
-  margin: 20px 10px 0 10px;
-  padding: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  height: 60%;
 }
 
 @media screen and (min-width: 600px) {
  .cards {
    display: flex;
    flex-wrap: wrap;
-   gap: 10px;
+   gap: 36px 32px;
  }
 }

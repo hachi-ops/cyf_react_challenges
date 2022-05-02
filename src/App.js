@@ -1,47 +1,44 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import searchIcon from './magnifying-glass.png';
+// import searchIcon from './magnifying-glass.png';
 import Header from './components/Header';
+import Countries from './components/Countries';
 
 
-// function countryPage () {
-//   return (
-//     <div>
-//       return <p>countryPage</p>
-//     </div>
-//   )
+// function handleSearch () {
+//  return (e) => setSearchTerm(e.target.value)
 // }
 
 function App() {
 
+  const [countries, setCountries] = useState([]);
 
+  const url = "https://restcountries.com/v3.1/all";
 
-const [items, setItems] = useState([]);
-
-useEffect(() => {
-  getData();
-}, [])
-
-const getData = () => {
-  fetch("https://restcountries.com/v3.1/all")
+  const getData = () => {
+  fetch(url)
     .then(res => res.json())
     .then(
     (results) => {
-    
-      setItems(results);
+      // setIsClicked(true);
+      setCountries(results);
       console.log(results)
     }
   )}
 
-  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {
+  getData();
+}, [])
+
+// const [searchTerm, setSearchTerm] = useState("");
 
     return(
         <div className='app'>
         <Header/>
-        <div className='search-area'>
+        {/* <div className='search-area'>
           <div class-className='search-input'>
             <div><img src={searchIcon} alt={"search icon"} /></div>
-           <input className='input'
+           <input 
            type="text" 
            placeholder='Search for a country...' 
            onChange={((e) => setSearchTerm(e.target.value))}
@@ -57,33 +54,11 @@ const getData = () => {
                     <option value="Oceania">Oceania</option>
                   </select>
               </div>
-          
-        </div>
               
-       <div className='cards'> 
-                 {items
-                //  .sort((a, b) => a.name.common.toLocaleCompare(b.name.common))
-                .filter((country) => { 
-                  if(country.name.common.toLowerCase().includes(searchTerm.toLowerCase())) {
-                      return true;
-                    }else{
-                      return false;
-                    }
-                })
-                 .map((country) => {
-                return (
-                  <div className="card" >
-                <img className='flag' src={country.flags.svg} alt={""} style={{width:"300px"}}/>
-                <div className="info">
-                <p><span>Country: </span>{country.name.common}</p>
-                <p><span>Population: </span>{country.population}</p>
-                <p><span>Region: </span>{country.region}</p> 
-                <p><span>Capital: </span>{country.capital}</p> 
-                </div>              
-            </div>              
-            )
-        })}
-       </div>            
+        </div> */}
+        <Countries countries={countries} />
+              
+       
         </div>     
     )
 }
