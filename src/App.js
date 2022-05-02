@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import searchIcon from './magnifying-glass.png';
-import moon from './moon.png';
-// import Header from './Header';
-// import Search from './Search';
-// import FilterInput from './FilterInput';
-// import SearchResults from './SearchResults';
-// import countriesAll from './countriesAll.json';
+import Header from './components/Header';
+
 
 // function countryPage () {
 //   return (
@@ -46,30 +42,28 @@ const getData = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
     return(
-        <div>
-          <header className="header">
-            <h1>Where in the World?</h1>
-            <img src={moon} alt={"moon"}/>
-            <h2>Dark Mode</h2>
-          </header>
+        <div className='app'>
+        <Header/>
         <div className='search-area'>
-          <img src={searchIcon} alt={"search icon"} />
-           <input 
+          <div class-className='search-input'>
+            <div><img src={searchIcon} alt={"search icon"} /></div>
+           <input className='input'
            type="text" 
            placeholder='Search for a country...' 
            onChange={((e) => setSearchTerm(e.target.value))}
            /> 
-              <div className='region'>
-                <label htmlfor="region">Filter by Region</label>
-                  <select id="region" name="region">
-                    <option value="Africa" selected>Africa</option>
+           </div>
+              <div className='select-region'>
+                <label htmlFor="select">Filter by Region</label>
+                  <select id="select" name="select" className='select'>
+                    <option value="Africa" >Africa</option>
                     <option value="America">America</option>
                     <option value="Asia">Asia</option>
                     <option value="Europe">Europe</option>
                     <option value="Oceania">Oceania</option>
                   </select>
               </div>
-              <div><button onClick={ClickLogger}>click</button></div>
+              {/* <div><button onClick={ClickLogger}>click</button></div> */}
         </div>
               
        <div className='cards'> 
