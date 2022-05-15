@@ -1,7 +1,7 @@
 import React from "react";
 
 const BabyName = ({ nameProp, handleClick }) => {
-  const { id, name, sex } = nameProp;
+  const { name, sex } = nameProp;
   const isBoy = sex === "m";
   return (
     <li
