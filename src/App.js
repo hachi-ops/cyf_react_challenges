@@ -93,7 +93,7 @@ function App() {
       <label for="f">Girls</label>
       <input type="radio" name="sex" value="all" id="all" />
       <label for="all">All</label> */}
-      <p style={{ fontStyle: "italic" }}>Your list go here...</p>
+      <p style={{ fontStyle: "italic" }}>Your list goes here...</p>
       <div
         style={{
           display: "flex",
