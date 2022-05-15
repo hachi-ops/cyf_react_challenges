@@ -1,114 +1,125 @@
-import React, {useState} from 'react';
-import babyNamesData from './data/babyNamesData.json';
-import './css/style.css';
+import React, { useState } from "react";
 
-function FavouriteNames (props) {
+import NameContainer from "./NameContainer";
+import RadioButton from "./RadioButton";
+import babyNamesData from "./data/babyNamesData.json";
+import "./css/style.css";
+
+function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [favourites, setFavourites] = useState([]);
+  const [sexFilter, setSexFilter] = useState("all");
+
+  const handleAddNameToFavourites = (nameObject) => {
+    setFavourites([...favourites, nameObject]);
+  };
+
+  const handleRemoveNameFromFavourites = (clickedName) => {
+    setFavourites(favourites.filter((fave) => fave.id !== clickedName.id));
+    // {
+    //   if (fave.id === nameObject.id) {
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // }
+    // )
+  };
+
+  const sortedAndFilteredBabyNames = babyNamesData
+    .sort((a, z) => {
+      const nameA = a.name;
+      const nameZ = z.name;
+      if (nameA > nameZ) return 1;
+      else if (nameA < nameZ) return -1;
+      return 0;
+
+      //         .sort((a, b) => a.name.localeCompare(b.name))
+    })
+    .filter((nameObject) => {
+      const { name, id, sex } = nameObject;
+      const searchTermInName = name
+        .toLowerCase()
+        .includes(searchTerm.toLocaleLowerCase());
+
+      const favouriteIds = favourites.map((name) => name.id);
+      const isSelectedAsFavourite = favouriteIds.includes(id);
+
+      const sexMatchesSelectedSex = sexFilter === "all" || sexFilter === sex;
+
+      return (
+        searchTermInName && !isSelectedAsFavourite && sexMatchesSelectedSex
+      );
+    });
+
   return (
-    <ul className="favourite-names" >
-      <p className="favourite-names-text">Favourite Names: </p>
-      {props.data.map((favouriteName) => (
-        <Name
-          key={favouriteName.id}
-          data={favouriteName}
-          ammendFavourites={props.removeFromFavourites}
+    <div style={{ width: "80vw", height: "80vh", margin: "auto" }}>
+      <input
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
+      />
+      <RadioButton
+        name="all"
+        setSexFilter={setSexFilter}
+        sexFilter={sexFilter}
+      />
+      <RadioButton name="m" setSexFilter={setSexFilter} sexFilter={sexFilter} />
+      <RadioButton name="f" setSexFilter={setSexFilter} sexFilter={sexFilter} />
+      {/* <button
+        style={{ backgroundColor: sexFilter === "all" ? "orange" : "grey" }}
+        onClick={() => setSexFilter("all")}
+      >
+        ALL
+      </button>
+      <button
+        style={{ backgroundColor: sexFilter === "m" ? "orange" : "grey" }}
+        onClick={() => setSexFilter("m")}
+      >
+        M
+      </button>
+      <button
+        style={{ backgroundColor: sexFilter === "f" ? "orange" : "grey" }}
+        onClick={() => setSexFilter("f")}
+      >
+        F
+      </button> */}
+      {/* <input type="radio" name="sex" value="m" id="m" />
+      <label for="m">Boys</label>
+      <input type="radio" name="sex" value="f" id="f" />
+      <label for="f">Girls</label>
+      <input type="radio" name="sex" value="all" id="all" />
+      <label for="all">All</label> */}
+      <p style={{ fontStyle: "italic" }}>Your list go here...</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column-reverse",
+          justifyContent: "space-around",
+        }}
+      >
+        <NameContainer
+          content={sortedAndFilteredBabyNames}
+          handleClick={handleAddNameToFavourites}
         />
-      ))}
-    </ul>
-  );
-};
-
-function Names (props) {
-  return (
-    <div className="names">
-      {babyNamesData
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map((babyName) => {
-          return (
-            <Name
-              key={babyName.id}
-              data={babyName}
-              ammendFavourites={props.addToFavourites}
+        <NameContainer
+          content={favourites}
+          handleClick={handleRemoveNameFromFavourites}
+        />
+        {/* <div style={{ width: "40%" }}> */}
+        {/* {favourites.map((fave) => (
+            <BabyName
+              nameProp={fave}
+              handleClick={handleRemoveNameFromFavourites}
             />
-          );
-        })}
+          ))} */}
+        {/* </div> */}
+      </div>
     </div>
   );
-};
-
-function Name (props) {
-  return (
-    <p
-     onClick={() => props.ammendFavourites(props.data)}>
-      {props.data.name}
-    </p>
-  );
-};
-
-function App () {
-
-  const [searchTerm, setSearchTerm] = useState("");
-   const [filteredNames, setFilteredNames] = useState(babyNamesData);
-  const [favouriteNames, setFavouriteNames] = useState([]);
-
-   const addFavourite = (babyName) => {
-    const favouriteNamesCopy = [...favouriteNames];
-    const nameListCopy = [...filteredNames];
-    favouriteNamesCopy.push(babyName);
-    nameListCopy.splice(filteredNames.indexOf(babyName), 1);
-    setFilteredNames(nameListCopy);
-    setFavouriteNames(favouriteNamesCopy);
-  };
-
-    const removeFavourite = (babyName) => {
-    const favouriteNamesCopy = [...favouriteNames];
-    const nameListCopy = [...filteredNames];
-    favouriteNamesCopy.splice(favouriteNames.indexOf(babyName), 1);
-    nameListCopy.push(babyName);
-    setFilteredNames(nameListCopy);
-    setFavouriteNames(favouriteNamesCopy);
-  };
-   
- return (
-    <div>
-      <header>
-        <form>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-          />
-        </form>
-      </header>
-      <div babyNames={filteredNames} addToFavourites={addFavourite}>
-              <ul>
-                {babyNamesData
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .filter((babyName) => {
-                  const {name} = babyName;
-                  if(name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                    return true;
-                  }else{
-                    return false; 
-                  }                                 
-                })
-
-                .map((babyName) => (
-                  <li className={babyName.sex} key={babyName.id}> {babyName.name}</li>
-                ))}
-            </ul>
-      </div>
-        
-             <FavouriteNames
-             
-        data={favouriteNames}
-        removeFromFavourites={removeFavourite}
-
-      />
-      <Names babyNames={filteredNames} addToFavourites={addFavourite} />
- 
-      </div>
-  )
 }
 
 export default App;
