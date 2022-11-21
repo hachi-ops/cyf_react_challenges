@@ -1,0 +1,79 @@
+:root {
+        --green-yellow-crayola: hsl(61, 74%, 82%);
+        --buff: hsl(45, 75%, 72%);
+        --sandy-brown: hsl(27, 97%, 65%);
+        --red-orange-color-wheel: hsl(14, 100%, 55%);
+        --xicetic: hsl(242, 94%, 7%);
+}
+
+body {             
+        font-family: 'Tourney', cursive;
+        font-size: 1.7rem;
+        background-color: hsl(0, 0%, 51%);
+}
+
+.container {
+    width: 89%;
+    margin: 10px auto;
+    border: 5px inset var(--sandy-brown);    
+    background-color: var(--xicetic);
+}
+
+.table {
+        width: 90%;
+        border: 8px ridge var(--green-yellow-crayola);
+        margin: 10px auto;
+        background-color: var(--buff);        
+}
+
+.table-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--xicetic);
+        border: 5px groove var(--sandy-brown);
+        margin: auto;
+        width: 100%;
+        padding: 5px;
+        width: 140px;
+}
+
+.table-row td {
+        font-size: .9rem;
+        color: var(--green-yellow-crayola);
+        font-weight: 900;
+}
+
+.score {
+        color: var(--red-orange-color-wheel);
+}
+
+h1 {
+        text-align: center;       
+        font-size: 1.5rem;
+        color: var(--buff);
+        font-weight: 900;
+}
+
+button {
+        display: block;
+        margin: 0 auto;
+        background: var(--sandy-brown);
+        color: var(--xicetic);
+        padding: 5px;
+        border: 1px solid var(--red-orange-color-wheel);
+        border-radius: 8px;
+        font-family: 'Tourney', cursive;
+        font-weight: 900;
+}
+
+@media screen and (min-width: 600px) {
+        h1 {
+                font-size: 3rem;
+        }
+
+        .country-name tr th {
+                font-size: 2.0rem;
+        }
+
+}
