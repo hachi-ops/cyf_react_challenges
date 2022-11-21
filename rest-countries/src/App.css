@@ -1,0 +1,201 @@
+/* - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%) 
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%) 
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%) 
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%) 
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%) 
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+## Typography ### 
+Body Copy - Homepage Items: 14px 
+- Detail Page: 16px 
+
+### Fonts 
+- Family: [Nunito Sans](https: //fonts.google.com/specimen/Nunito+Sans)
+- Weights: 300, 600, 800 
+## Icons 
+For the icons, you can use a font icon library. Don't worry if the icons that you choose don't look exactly like they do on the design. Some suggestions can be found below: - [Font Awesome](https: //fontawesome.com)
+- [IcoMoon](https: //icomoon.io)
+- [Ionicons](https: //ionicons.com) */
+
+
+/* <a href="https://www.flaticon.com/free-icons/moon"title="moon icons">Moon icons created by Good Ware - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/moon"title="moon icons">Moon icons created by Good Ware - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/search"title="search icons">Search icons created by Taufik - Flaticon</a> */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-dark-blue: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+ 
+  --box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    /* --dark-mode-elements: hsl(209, 23%, 22%);
+    --dark-mode-bg: hsl(206, 27%, 17%);
+    --light-mode-elements: #fff;
+    --light-mode-bg: hsl(0, 0%, 98%); */
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--very-light-gray);
+}
+
+.app {
+  background-color: var(--light-mode-bg);
+  min-height: 100vh;
+  height: 100%;
+}
+
+  .header{
+  display: flex;
+  justify-content: space-between;
+  background-color:#fff;
+  margin-bottom: 70px;
+ 
+
+}
+
+header h1 {
+  font-size: 1rem;
+  font-weight: 800;
+ 
+}
+
+header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  rgba(0, 0, 0, 0.22) 0px 15px 12px;
+ 
+  
+}
+
+.search-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 5px;
+    outline: none;
+    margin: auto;
+}
+.search-area, .cards {
+  background-color: var(--very-light-gray);
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  display: block;
+  padding: 10px;
+  outline: none;
+  border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-family: inherit;
+}
+
+.search-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  gap: 5px;  
+  width: 400px; 
+} 
+
+.select-region {
+  width: 400px;
+  background-color: #fff;
+  
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+.select-region select {
+  padding: 5px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.cards {
+  gap: 36px 32px;
+}
+
+.card {
+  /* border: 2px solid blue; */
+  margin: 0 auto;
+  background-color: var(--white);
+  text-align: left;
+  max-width: 280px;
+  max-height:fit-content;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  rgba(0, 0, 0, 0.22) 0px 15px 12px; 
+}
+
+.card span {
+  font-weight: 600;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.card img {
+  /* height: 50%; */
+  width: 100%;
+}
+
+.info {
+  margin-bottom: 10px;
+  padding: 15px;
+  height: 60%;
+}
+
+@media screen and (min-width: 600px) {
+ .cards {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 36px 32px;
+ }
+}
