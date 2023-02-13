@@ -1,3 +1,5 @@
+You can view a deployed version of this project here: https://cyf-hachi-ops-scores.netlify.app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
